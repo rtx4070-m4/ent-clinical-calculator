@@ -1,7 +1,3 @@
----
-title: "ENT Clinical Calculator Suite"
-output: github_document
----
 
 # 🩺 ENT Clinical Calculator Suite
 
