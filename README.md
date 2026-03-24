@@ -19,72 +19,272 @@ output: github_document
 
 ---
 
-# Overview
+Overview
 
-**ENT Clinical Calculator Suite** is a comprehensive **otolaryngology clinical computation platform** designed to assist clinicians, researchers, and medical students in performing **evidence-based ENT calculations**.
+ENT Clinical Calculator Suite is a comprehensive otolaryngology clinical computation platform designed to assist clinicians, researchers, and medical students in performing evidence-based ENT calculations.
 
-The system integrates modern **web technologies, scientific computing languages, and high-performance systems programming** to provide accurate clinical scoring tools and diagnostic indices used in:
+The system integrates modern web technologies, scientific computing languages, and high-performance systems programming to provide accurate clinical scoring tools and diagnostic indices used in:
 
-- Audiology  
-- Vestibular medicine  
-- Rhinology  
-- Sleep medicine  
-- Head & neck surgery  
-- Pediatric otolaryngology  
+Audiology
+Vestibular medicine
+Rhinology
+Sleep medicine
+Head & neck surgery
+Pediatric otolaryngology
 
-This project demonstrates a **polyglot medical software architecture** combining:
+The project demonstrates a multi-language medical software architecture combining:
 
-- scientific computing  
-- high-performance algorithms  
-- clinical scoring systems  
-- modern web applications  
+scientific computing
+high-performance algorithms
+clinical scoring systems
+modern web applications
+Key Features
+Clinical ENT Calculators
 
----
+The platform includes validated scoring systems used in clinical otolaryngology.
 
-# Key Features
+Audiology
+Pure Tone Average (PTA)
+Speech Discrimination Score
+Hearing Handicap Inventory
+Vestibular Medicine
+Dizziness Handicap Inventory (DHI)
+Caloric Test Asymmetry
+Vestibulo-Ocular Reflex (VOR) Gain
+Rhinology
+SNOT-22 Symptom Score
+Lund-Mackay CT Sinus Score
+Sleep Medicine
+STOP-BANG Sleep Apnea Score
+Epworth Sleepiness Scale
+Head & Neck
+ASA Airway Risk Score
+Thyroid Nodule Malignancy Risk Index
+Pediatric ENT
+Tonsil Size Grading
+Pediatric Sleep Apnea Risk Score
 
-## Clinical ENT Calculators
+Each calculator includes:
 
-### Audiology
+clinical input forms
+automated scoring
+diagnostic interpretation
+reference ranges
+evidence-based citations
+System Architecture
 
-- Pure Tone Average (PTA)
-- Speech Discrimination Score
-- Hearing Handicap Inventory
+The platform follows a modular polyglot architecture, allowing each programming language to perform tasks it excels at.
 
-### Vestibular Medicine
+                ┌─────────────────────────┐
+                │        Frontend         │
+                │ HTML • CSS • TypeScript│
+                │     Interactive UI     │
+                └──────────┬─────────────┘
+                           │
+                           │ REST API
+                           │
+                ┌──────────▼─────────────┐
+                │       FastAPI API      │
+                │        Python          │
+                └──────────┬─────────────┘
+                           │
+        ┌──────────────────┼───────────────────┐
+        │                  │                   │
+ ┌──────▼──────┐    ┌──────▼──────┐     ┌──────▼───────┐
+ │ Scientific  │    │ High Perf   │     │   Database   │
+ │ Computing   │    │ Algorithms  │     │ PostgreSQL   │
+ │ Python/R/   │    │ C/C++/Rust  │     │ SQL Schema   │
+ │ Julia       │    │             │     │ Audit Logs   │
+ └─────────────┘    └─────────────┘     └──────────────┘
 
-- Dizziness Handicap Inventory (DHI)
-- Caloric Test Asymmetry
-- Vestibulo-Ocular Reflex (VOR) Gain
+      ┌──────────────┐      ┌──────────────┐
+      │ Mobile Apps  │      │ Enterprise   │
+      │ Swift (iOS)  │      │ Java / C#    │
+      │ Kotlin       │      │ Integration  │
+      └──────────────┘      └──────────────┘
+Technology Stack
+Layer	Technology
+Frontend	HTML, CSS, TypeScript, JavaScript
+Backend API	Python (FastAPI)
+Scientific Computing	Python, R, Julia
+High-Performance Modules	C, C++, Rust
+Mobile Apps	Swift (iOS), Kotlin (Android)
+Enterprise Integration	Java, C#
+Web Server Module	PHP
+Database	PostgreSQL
+Visualization	Chart.js / D3.js
+Containerization	Docker
+CI/CD	GitHub Actions
+Project Structure
+ent-clinical-calculator/
 
-### Rhinology
+frontend/
+   index.html
+   styles.css
+   app.ts
 
-- SNOT-22 Score
-- Lund-Mackay CT Score
+backend/
+   main.py
+   api/
+   routers/
 
-### Sleep Medicine
+python_engine/
+   calculators.py
+   audiology.py
+   sleep.py
 
-- STOP-BANG Score
-- Epworth Sleepiness Scale
+r_engine/
+   statistical_validation.R
 
-### Head & Neck
+julia_engine/
+   numeric_algorithms.jl
 
-- ASA Airway Risk Score
-- Thyroid Nodule Malignancy Risk
+cpp_engine/
+   fast_calculations.cpp
 
-### Pediatric ENT
+rust_engine/
+   optimized_compute.rs
 
-- Tonsil Size Grading
-- Pediatric Sleep Apnea Risk
+java_module/
+   hospital_integration.java
 
-Each calculator provides:
+csharp_module/
+   dotnet_bridge.cs
 
-- structured clinical inputs  
-- automatic scoring  
-- diagnostic interpretation  
-- reference ranges  
-- evidence-based citations  
+php_interface/
+   ent_calculator.php
 
----
+mobile_ios/
+   ENTCalculatorApp.swift
 
-# System Architecture
+mobile_android/
+   MainActivity.kt
+
+database/
+   schema.sql
+   migrations/
+
+docker/
+   Dockerfile
+   docker-compose.yml
+
+tests/
+   unit_tests/
+   api_tests/
+
+docs/
+   clinical_references.md
+   developer_guide.md
+Installation
+1️⃣ Clone the repository
+git clone https://github.com/yourusername/ent-clinical-calculator.git
+cd ent-clinical-calculator
+2️⃣ Install dependencies
+
+Python backend
+
+pip install -r requirements.txt
+
+R modules
+
+install.packages(c("tidyverse","caret"))
+
+Julia
+
+using Pkg
+Pkg.add(["DataFrames","Statistics"])
+3️⃣ Run the backend server
+uvicorn backend.main:app --reload
+
+Server runs at
+
+http://localhost:8000
+4️⃣ Launch frontend
+
+Open
+
+frontend/index.html
+
+in your browser.
+
+Example API Usage
+Pure Tone Average
+
+Request
+
+POST /calculate/pta
+
+Input
+
+{
+  "500hz": 20,
+  "1000hz": 25,
+  "2000hz": 30
+}
+
+Response
+
+{
+  "pta": 25,
+  "classification": "Mild Hearing Loss"
+}
+Clinical References
+
+This software implements widely used ENT scoring systems referenced in:
+
+American Academy of Otolaryngology – Head and Neck Surgery
+WHO Hearing Loss Guidelines
+STOP-BANG Sleep Apnea Screening Tool
+Lund-Mackay Radiologic Sinus Score
+Epworth Sleepiness Scale
+
+Detailed references are available in:
+
+docs/clinical_references.md
+Testing
+
+Run unit tests:
+
+pytest tests/
+
+API tests:
+
+pytest tests/api_tests/
+Docker Deployment
+
+Build and run the system:
+
+docker-compose up --build
+Security and Compliance
+
+This project implements:
+
+input validation
+audit logging
+API authentication support
+secure containerized deployment
+
+⚠️ Note:
+This software is intended for educational and research purposes only and does not replace clinical judgment.
+
+Future Development
+
+Planned enhancements:
+
+Audiogram visualization engine
+Machine learning hearing loss classification
+Voice pathology signal analysis
+Vestibular disorder AI prediction
+Electronic health record (EHR) integration
+Contributing
+
+Contributions from clinicians, developers, and researchers are welcome.
+
+Please open:
+
+issues
+pull requests
+feature proposals
+License
+
+MIT License
